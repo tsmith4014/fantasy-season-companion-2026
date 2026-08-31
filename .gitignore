@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+
+# Authenticated league data is local-only and must never reach Git or Pages.
+.private/
+imports/
+exports/
+*.local.json
+*.private.json
