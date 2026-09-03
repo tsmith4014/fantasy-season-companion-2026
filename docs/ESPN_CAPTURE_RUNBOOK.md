@@ -23,8 +23,10 @@ Capture and timestamp each surface independently:
   acquisition limit, trade deadline, and team count.
 - My Team: stable player ID, slot, name, NFL team, position, status,
   projections, and visible lock/drop eligibility.
-- League rosters: every team ID/name, waiver priority, and every rostered
-  player's stable ID and position.
+- League rosters: every team ID/name, visible manager label, waiver priority,
+  and every rostered player's stable ID and position. Visit each team detail
+  page when needed to capture projections and matchup columns that the
+  league-wide roster table omits.
 - Add Players: all available pages when feasible. If a bounded top-N strategy
   is used, record exact positions, page/row counts, sort order, and
   `complete: false`.

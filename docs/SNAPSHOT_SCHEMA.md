@@ -60,8 +60,9 @@ belongs in this document or any other tracked file.
 
 ## Team and Player Records
 
-Each team has a stable `teamId`, display `name`, `isMine`, current
-`waiverPriority`, and normalized `players` array. Each rostered player has:
+Each team has a stable `teamId`, display `name`, optional private
+`managerName`, `isMine`, current `waiverPriority`, and normalized `players`
+array. Each rostered player has:
 
 - `playerId`: stable platform ID; for a defense use a stable team key.
 - `name`, `nflTeam`, `position`, and current `slot`.

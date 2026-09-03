@@ -93,6 +93,7 @@ function normalizeTeam(raw) {
   return {
     teamId: text(raw?.teamId, 120),
     name: text(raw?.name, 120),
+    managerName: optionalText(raw?.managerName, 120),
     isMine: raw?.isMine === true,
     waiverPriority: integer(raw?.waiverPriority),
     players: Array.isArray(raw?.players) ? raw.players.map((player) => normalizePlayer(player, true)) : [],

@@ -467,7 +467,9 @@ function renderLeague() {
       card.append(el("header", {}, [
         el("div", {}, [
           el("h3", { text: team.name || "Unnamed team" }),
-          el("span", { text: team.isMine ? "Your roster" : "Opponent roster" }),
+          el("span", {
+            text: [team.isMine ? "Your roster" : "Opponent roster", team.managerName].filter(Boolean).join(" · "),
+          }),
         ]),
         el("span", { className: "status-badge", text: Number.isFinite(team.waiverPriority) ? `Priority ${team.waiverPriority}` : "Priority —" }),
       ]));
@@ -505,6 +507,7 @@ function renderTrades() {
     el("div", {}, [
       el("p", { className: "eyebrow", text: `Partner ${index + 1}` }),
       el("h3", { text: trade.team.name || "Unnamed team" }),
+      ...(trade.team.managerName ? [el("span", { text: trade.team.managerName })] : []),
     ]),
     el("div", { className: "trade-axis" }, [
       el("span", { text: "Your likely leverage" }),
