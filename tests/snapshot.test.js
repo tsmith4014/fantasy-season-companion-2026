@@ -9,10 +9,12 @@ function fixture() {
 
 test("fictional schema-v1 snapshot validates and normalizes positions", () => {
   const raw = fixture();
+  raw.teams[0].managerName = "Avery Manager";
   raw.availablePlayers[0].position = "dst";
   raw.teams[1].players[0].position = "QB, S";
   const result = validateSnapshot(raw);
   assert.equal(result.ok, true);
+  assert.equal(result.snapshot.teams[0].managerName, "Avery Manager");
   assert.equal(result.snapshot.availablePlayers[0].position, "D/ST");
   assert.equal(result.snapshot.teams[1].players[0].position, "QB");
 });

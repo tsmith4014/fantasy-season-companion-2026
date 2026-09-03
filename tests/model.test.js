@@ -91,6 +91,17 @@ test("free agents have no priority cost", () => {
   assert.equal(freeAgent.priorityCost, 0);
 });
 
+test("ESPN day-to-day and suspended labels reduce health scores", () => {
+  const snapshot = snapshotAt(1);
+  snapshot.availablePlayers[0].status = "DTD";
+  snapshot.availablePlayers[1].status = "SSPD";
+  const result = analyzeWaivers({ snapshot, asOf: NOW });
+  const dayToDay = result.recommendations.find((item) => item.addPlayerId === snapshot.availablePlayers[0].playerId);
+  const suspended = result.recommendations.find((item) => item.addPlayerId === snapshot.availablePlayers[1].playerId);
+  assert.equal(dayToDay.components.health, 68);
+  assert.equal(suspended.components.health, 5);
+});
+
 test("last waiver priority has zero preservation cost after reset", () => {
   const snapshot = snapshotAt(1);
   snapshot.teams.find((team) => team.isMine).waiverPriority = snapshot.league.teamCount;

@@ -62,9 +62,9 @@ function weightedAverage(parts, weights) {
 
 function healthScore(status) {
   const normalized = String(status ?? "").trim().toUpperCase();
-  if (["IR", "O", "OUT", "SUSP"].includes(normalized)) return 5;
+  if (["IR", "O", "OUT", "SUSP", "SSPD"].includes(normalized)) return 5;
   if (["D", "DOUBTFUL"].includes(normalized)) return 30;
-  if (["Q", "QUESTIONABLE"].includes(normalized)) return 68;
+  if (["Q", "QUESTIONABLE", "DTD"].includes(normalized)) return 68;
   if (["P", "PROBABLE"].includes(normalized)) return 88;
   return 100;
 }
