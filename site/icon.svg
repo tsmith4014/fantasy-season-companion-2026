@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Waiver Lab</title>
+  <rect width="64" height="64" rx="14" fill="#f7b94b"/>
+  <path d="M13 17h8l5 25 6-18h7l5 18 5-25h7L48 49h-8l-5-15-5 15h-9L13 17Z" fill="#2b1b03"/>
+  <path d="M14 54h36" fill="none" stroke="#2b1b03" stroke-width="3" stroke-dasharray="5 4" opacity=".55"/>
+</svg>
