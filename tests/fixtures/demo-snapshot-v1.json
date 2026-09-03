@@ -1,0 +1,808 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "platform": "demo",
+    "method": "fictional public fixture",
+    "capturedAt": "2026-09-01T14:00:00.000Z",
+    "isDemo": true,
+    "surfaces": [
+      {
+        "kind": "roster",
+        "capturedAt": "2026-09-01T14:00:00.000Z",
+        "status": "complete"
+      },
+      {
+        "kind": "available",
+        "capturedAt": "2026-09-01T14:00:00.000Z",
+        "status": "complete"
+      },
+      {
+        "kind": "waiverOrder",
+        "capturedAt": "2026-09-01T14:00:00.000Z",
+        "status": "complete"
+      },
+      {
+        "kind": "leagueSettings",
+        "capturedAt": "2026-09-01T14:00:00.000Z",
+        "status": "complete"
+      }
+    ],
+    "coverage": {
+      "availablePlayers": {
+        "complete": true,
+        "rowCount": 16,
+        "pageCount": 1,
+        "strategy": "fictional complete pool",
+        "positions": [
+          "QB",
+          "RB",
+          "WR",
+          "TE",
+          "D/ST",
+          "K"
+        ]
+      },
+      "teams": {
+        "complete": true,
+        "rowCount": 4
+      }
+    }
+  },
+  "league": {
+    "season": 2026,
+    "teamCount": 4,
+    "scoring": {
+      "format": "full-ppr",
+      "receptionPoints": 1
+    },
+    "roster": {
+      "size": 10,
+      "starters": {
+        "QB": 1,
+        "RB": 2,
+        "WR": 2,
+        "TE": 1,
+        "FLEX": 1,
+        "D/ST": 1,
+        "K": 1
+      },
+      "bench": 1,
+      "ir": 1
+    },
+    "waivers": {
+      "system": "weekly rolling priority",
+      "periodDays": 1,
+      "order": "inverse standings reset",
+      "myPriority": 4,
+      "nextResetAt": "2026-09-08T09:00:00.000Z"
+    },
+    "tradeDeadline": "2026-12-02"
+  },
+  "myTeamId": "demo-team-larks",
+  "teams": [
+    {
+      "teamId": "demo-team-larks",
+      "name": "Lakeview Larks",
+      "isMine": true,
+      "waiverPriority": 4,
+      "players": [
+        {
+          "playerId": "demo-roster-qb-01",
+          "name": "Mason Vale",
+          "nflTeam": "HBR",
+          "position": "QB",
+          "slot": "QB",
+          "status": null,
+          "weeklyProjection": 19.4,
+          "seasonProjection": 302.1,
+          "seasonAverage": 18.2,
+          "rosteredPct": 96,
+          "rosterChangePct": 0.2,
+          "droppable": false,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-rb-01",
+          "name": "Jalen North",
+          "nflTeam": "POR",
+          "position": "RB",
+          "slot": "RB",
+          "status": null,
+          "weeklyProjection": 17.8,
+          "seasonProjection": 268.4,
+          "seasonAverage": 16.1,
+          "rosteredPct": 94,
+          "rosterChangePct": 0.5,
+          "droppable": false,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-rb-02",
+          "name": "Theo Banks",
+          "nflTeam": "ATC",
+          "position": "RB",
+          "slot": "RB",
+          "status": "Q",
+          "weeklyProjection": 10.1,
+          "seasonProjection": 166.8,
+          "seasonAverage": 10.4,
+          "rosteredPct": 71,
+          "rosterChangePct": -1.1,
+          "droppable": true,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-wr-01",
+          "name": "Eli Mercer",
+          "nflTeam": "GLD",
+          "position": "WR",
+          "slot": "WR",
+          "status": null,
+          "weeklyProjection": 15.9,
+          "seasonProjection": 245.8,
+          "seasonAverage": 14.7,
+          "rosteredPct": 92,
+          "rosterChangePct": 0.1,
+          "droppable": false,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-wr-02",
+          "name": "Noah Quill",
+          "nflTeam": "HBR",
+          "position": "WR",
+          "slot": "WR",
+          "status": null,
+          "weeklyProjection": 13.1,
+          "seasonProjection": 214.2,
+          "seasonAverage": 12.8,
+          "rosteredPct": 82,
+          "rosterChangePct": 0.4,
+          "droppable": false,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-te-01",
+          "name": "Ari Summit",
+          "nflTeam": "POR",
+          "position": "TE",
+          "slot": "TE",
+          "status": null,
+          "weeklyProjection": 12.6,
+          "seasonProjection": 191.2,
+          "seasonAverage": 11.5,
+          "rosteredPct": 87,
+          "rosterChangePct": 0.8,
+          "droppable": false,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-wr-03",
+          "name": "Cal Rowan",
+          "nflTeam": "ATC",
+          "position": "WR",
+          "slot": "FLEX",
+          "status": null,
+          "weeklyProjection": 11.2,
+          "seasonProjection": 178.5,
+          "seasonAverage": 10.8,
+          "rosteredPct": 66,
+          "rosterChangePct": -0.3,
+          "droppable": true,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-dst-01",
+          "name": "Summit D/ST",
+          "nflTeam": "SUM",
+          "position": "D/ST",
+          "slot": "D/ST",
+          "status": null,
+          "weeklyProjection": 4.8,
+          "seasonProjection": 78.3,
+          "seasonAverage": 4.6,
+          "rosteredPct": 22,
+          "rosterChangePct": -0.4,
+          "droppable": true,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-k-01",
+          "name": "Casey Mere",
+          "nflTeam": "SUM",
+          "position": "K",
+          "slot": "K",
+          "status": null,
+          "weeklyProjection": 7.1,
+          "seasonProjection": 116.8,
+          "seasonAverage": 7,
+          "rosteredPct": 19,
+          "rosterChangePct": -0.1,
+          "droppable": true,
+          "locked": false
+        },
+        {
+          "playerId": "demo-roster-rb-03",
+          "name": "Owen Flint",
+          "nflTeam": "GLD",
+          "position": "RB",
+          "slot": "BE",
+          "status": null,
+          "weeklyProjection": 6.1,
+          "seasonProjection": 96.4,
+          "seasonAverage": 5.8,
+          "rosteredPct": 21,
+          "rosterChangePct": -2.4,
+          "droppable": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "teamId": "demo-team-comets",
+      "name": "River North Comets",
+      "isMine": false,
+      "waiverPriority": 1,
+      "players": [
+        {
+          "playerId": "demo-c-qb",
+          "name": "Rory Pike",
+          "nflTeam": "BLU",
+          "position": "QB",
+          "slot": "QB",
+          "weeklyProjection": 17.1,
+          "seasonProjection": 274.1,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-c-rb1",
+          "name": "Dante Grove",
+          "nflTeam": "SIL",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 14.5,
+          "seasonProjection": 226.2,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-c-rb2",
+          "name": "Micah Reed",
+          "nflTeam": "HBR",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 12.2,
+          "seasonProjection": 194.3,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-c-wr1",
+          "name": "Jonah Crest",
+          "nflTeam": "POR",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 16.1,
+          "seasonProjection": 252.2,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-c-wr2",
+          "name": "Zane Harbor",
+          "nflTeam": "BLU",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 10.8,
+          "seasonProjection": 169.4,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-c-te",
+          "name": "Levi Stone",
+          "nflTeam": "SIL",
+          "position": "TE",
+          "slot": "TE",
+          "weeklyProjection": 9.7,
+          "seasonProjection": 151.7,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-c-flex",
+          "name": "Kellan Frost",
+          "nflTeam": "GLD",
+          "position": "WR",
+          "slot": "FLEX",
+          "weeklyProjection": 10.3,
+          "seasonProjection": 165.9,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-c-dst",
+          "name": "Blue D/ST",
+          "nflTeam": "BLU",
+          "position": "D/ST",
+          "slot": "D/ST",
+          "weeklyProjection": 5.2,
+          "seasonProjection": 83.7,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-c-k",
+          "name": "Jamie Pool",
+          "nflTeam": "BLU",
+          "position": "K",
+          "slot": "K",
+          "weeklyProjection": 7.5,
+          "seasonProjection": 121.3,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-c-bench",
+          "name": "Emmett Cove",
+          "nflTeam": "ATC",
+          "position": "RB",
+          "slot": "BE",
+          "weeklyProjection": 7.8,
+          "seasonProjection": 124.4,
+          "droppable": true
+        }
+      ]
+    },
+    {
+      "teamId": "demo-team-forge",
+      "name": "South Loop Forge",
+      "isMine": false,
+      "waiverPriority": 2,
+      "players": [
+        {
+          "playerId": "demo-f-qb",
+          "name": "Ezra Wynn",
+          "nflTeam": "SIL",
+          "position": "QB",
+          "slot": "QB",
+          "weeklyProjection": 20.1,
+          "seasonProjection": 315.6,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-f-rb1",
+          "name": "Silas Brook",
+          "nflTeam": "GLD",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 13.1,
+          "seasonProjection": 203.8,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-f-rb2",
+          "name": "Nico Lane",
+          "nflTeam": "BLU",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 9.4,
+          "seasonProjection": 151.1,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-f-wr1",
+          "name": "Milo West",
+          "nflTeam": "HBR",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 14.8,
+          "seasonProjection": 234.9,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-f-wr2",
+          "name": "Finn Alder",
+          "nflTeam": "SIL",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 13.9,
+          "seasonProjection": 219.1,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-f-te",
+          "name": "Arlo Mesa",
+          "nflTeam": "ATC",
+          "position": "TE",
+          "slot": "TE",
+          "weeklyProjection": 8.1,
+          "seasonProjection": 126.3,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-f-flex",
+          "name": "Tate Ember",
+          "nflTeam": "POR",
+          "position": "RB",
+          "slot": "FLEX",
+          "weeklyProjection": 10.6,
+          "seasonProjection": 170.3,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-f-dst",
+          "name": "Silver D/ST",
+          "nflTeam": "SIL",
+          "position": "D/ST",
+          "slot": "D/ST",
+          "weeklyProjection": 5.8,
+          "seasonProjection": 91.4,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-f-k",
+          "name": "Devon Oak",
+          "nflTeam": "SIL",
+          "position": "K",
+          "slot": "K",
+          "weeklyProjection": 7.8,
+          "seasonProjection": 126.5,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-f-bench",
+          "name": "Ira Coast",
+          "nflTeam": "GLD",
+          "position": "WR",
+          "slot": "BE",
+          "weeklyProjection": 7.1,
+          "seasonProjection": 114.8,
+          "droppable": true
+        }
+      ]
+    },
+    {
+      "teamId": "demo-team-owls",
+      "name": "Wicker Park Owls",
+      "isMine": false,
+      "waiverPriority": 3,
+      "players": [
+        {
+          "playerId": "demo-o-qb",
+          "name": "Hugo Field",
+          "nflTeam": "ATC",
+          "position": "QB",
+          "slot": "QB",
+          "weeklyProjection": 18.3,
+          "seasonProjection": 288.4,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-o-rb1",
+          "name": "Beck Marsh",
+          "nflTeam": "POR",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 15.2,
+          "seasonProjection": 238.7,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-o-rb2",
+          "name": "Luca Heath",
+          "nflTeam": "SIL",
+          "position": "RB",
+          "slot": "RB",
+          "weeklyProjection": 11.4,
+          "seasonProjection": 181.4,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-o-wr1",
+          "name": "Remy Birch",
+          "nflTeam": "GLD",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 13.8,
+          "seasonProjection": 221.8,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-o-wr2",
+          "name": "Jules Cinder",
+          "nflTeam": "ATC",
+          "position": "WR",
+          "slot": "WR",
+          "weeklyProjection": 12.4,
+          "seasonProjection": 198.6,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-o-te",
+          "name": "Asher Dune",
+          "nflTeam": "HBR",
+          "position": "TE",
+          "slot": "TE",
+          "weeklyProjection": 10.7,
+          "seasonProjection": 167.2,
+          "droppable": false
+        },
+        {
+          "playerId": "demo-o-flex",
+          "name": "Cruz Hollis",
+          "nflTeam": "BLU",
+          "position": "WR",
+          "slot": "FLEX",
+          "weeklyProjection": 10.9,
+          "seasonProjection": 174.5,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-o-dst",
+          "name": "Atlantic D/ST",
+          "nflTeam": "ATC",
+          "position": "D/ST",
+          "slot": "D/ST",
+          "weeklyProjection": 5.5,
+          "seasonProjection": 87.6,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-o-k",
+          "name": "Alex Snow",
+          "nflTeam": "ATC",
+          "position": "K",
+          "slot": "K",
+          "weeklyProjection": 7.2,
+          "seasonProjection": 118.4,
+          "droppable": true
+        },
+        {
+          "playerId": "demo-o-bench",
+          "name": "Perry Moss",
+          "nflTeam": "POR",
+          "position": "RB",
+          "slot": "BE",
+          "weeklyProjection": 6.9,
+          "seasonProjection": 107.4,
+          "droppable": true
+        }
+      ]
+    }
+  ],
+  "availablePlayers": [
+    {
+      "playerId": "demo-free-rb-01",
+      "name": "Kai Harbor",
+      "nflTeam": "BLU",
+      "position": "RB",
+      "availability": "FA",
+      "status": null,
+      "opponent": "vs SIL",
+      "weeklyProjection": 11.8,
+      "seasonProjection": 187.2,
+      "seasonAverage": 10.6,
+      "percentStarted": 18,
+      "rosteredPct": 58,
+      "rosterChangePct": 8.2
+    },
+    {
+      "playerId": "demo-free-rb-02",
+      "name": "Drew Hollow",
+      "nflTeam": "ATC",
+      "position": "RB",
+      "availability": "WA",
+      "status": null,
+      "opponent": "at POR",
+      "weeklyProjection": 10.9,
+      "seasonProjection": 175.8,
+      "seasonAverage": 9.8,
+      "percentStarted": 11,
+      "rosteredPct": 43,
+      "rosterChangePct": 11.4
+    },
+    {
+      "playerId": "demo-free-rb-03",
+      "name": "Reese Valor",
+      "nflTeam": "SIL",
+      "position": "RB",
+      "availability": "FA",
+      "status": "Q",
+      "opponent": "at BLU",
+      "weeklyProjection": 9.6,
+      "seasonProjection": 154.1,
+      "seasonAverage": 9.1,
+      "percentStarted": 7,
+      "rosteredPct": 34,
+      "rosterChangePct": 4.1
+    },
+    {
+      "playerId": "demo-free-wr-01",
+      "name": "Rowan Echo",
+      "nflTeam": "POR",
+      "position": "WR",
+      "availability": "WA",
+      "status": null,
+      "opponent": "vs ATC",
+      "weeklyProjection": 13.3,
+      "seasonProjection": 211.5,
+      "seasonAverage": 12.2,
+      "percentStarted": 21,
+      "rosteredPct": 62,
+      "rosterChangePct": 9.8
+    },
+    {
+      "playerId": "demo-free-wr-02",
+      "name": "Ellis Moon",
+      "nflTeam": "HBR",
+      "position": "WR",
+      "availability": "FA",
+      "status": null,
+      "opponent": "vs GLD",
+      "weeklyProjection": 11.4,
+      "seasonProjection": 182.6,
+      "seasonAverage": 10.7,
+      "percentStarted": 12,
+      "rosteredPct": 39,
+      "rosterChangePct": 5.7
+    },
+    {
+      "playerId": "demo-free-wr-03",
+      "name": "Avery Gale",
+      "nflTeam": "GLD",
+      "position": "WR",
+      "availability": "FA",
+      "status": null,
+      "opponent": "at HBR",
+      "weeklyProjection": 9.8,
+      "seasonProjection": 158.7,
+      "seasonAverage": 9.4,
+      "percentStarted": 5,
+      "rosteredPct": 27,
+      "rosterChangePct": 2.1
+    },
+    {
+      "playerId": "demo-free-te-01",
+      "name": "Sage Linden",
+      "nflTeam": "SIL",
+      "position": "TE",
+      "availability": "FA",
+      "status": null,
+      "opponent": "at BLU",
+      "weeklyProjection": 9.3,
+      "seasonProjection": 146.3,
+      "seasonAverage": 8.7,
+      "percentStarted": 9,
+      "rosteredPct": 31,
+      "rosterChangePct": 3.8
+    },
+    {
+      "playerId": "demo-free-te-02",
+      "name": "Lane Cedar",
+      "nflTeam": "ATC",
+      "position": "TE",
+      "availability": "WA",
+      "status": null,
+      "opponent": "at POR",
+      "weeklyProjection": 8.7,
+      "seasonProjection": 137.8,
+      "seasonAverage": 8.1,
+      "percentStarted": 6,
+      "rosteredPct": 22,
+      "rosterChangePct": 6.2
+    },
+    {
+      "playerId": "demo-free-qb-01",
+      "name": "Quinn Atlas",
+      "nflTeam": "GLD",
+      "position": "QB",
+      "availability": "FA",
+      "status": null,
+      "opponent": "at HBR",
+      "weeklyProjection": 18.2,
+      "seasonProjection": 286.4,
+      "seasonAverage": 17.4,
+      "percentStarted": 14,
+      "rosteredPct": 42,
+      "rosterChangePct": 3.3
+    },
+    {
+      "playerId": "demo-free-qb-02",
+      "name": "Rene Wild",
+      "nflTeam": "POR",
+      "position": "QB",
+      "availability": "WA",
+      "status": null,
+      "opponent": "vs ATC",
+      "weeklyProjection": 16.8,
+      "seasonProjection": 266.1,
+      "seasonAverage": 16.2,
+      "percentStarted": 8,
+      "rosteredPct": 29,
+      "rosterChangePct": 1.7
+    },
+    {
+      "playerId": "demo-free-dst-01",
+      "name": "Harbor D/ST",
+      "nflTeam": "HBR",
+      "position": "D/ST",
+      "availability": "FA",
+      "status": null,
+      "opponent": "vs GLD",
+      "weeklyProjection": 7.1,
+      "seasonProjection": 109.8,
+      "seasonAverage": 6.4,
+      "percentStarted": 19,
+      "rosteredPct": 37,
+      "rosterChangePct": 4.6
+    },
+    {
+      "playerId": "demo-free-dst-02",
+      "name": "Prairie D/ST",
+      "nflTeam": "POR",
+      "position": "D/ST",
+      "availability": "FA",
+      "status": null,
+      "opponent": "vs ATC",
+      "weeklyProjection": 6.4,
+      "seasonProjection": 101.2,
+      "seasonAverage": 6.1,
+      "percentStarted": 12,
+      "rosteredPct": 24,
+      "rosterChangePct": 2.4
+    },
+    {
+      "playerId": "demo-free-k-01",
+      "name": "Marlow Ray",
+      "nflTeam": "SIL",
+      "position": "K",
+      "availability": "FA",
+      "status": null,
+      "opponent": "at BLU",
+      "weeklyProjection": 8.1,
+      "seasonProjection": 127.4,
+      "seasonAverage": 7.7,
+      "percentStarted": 16,
+      "rosteredPct": 32,
+      "rosterChangePct": 1.8
+    },
+    {
+      "playerId": "demo-free-k-02",
+      "name": "Robin Ash",
+      "nflTeam": "ATC",
+      "position": "K",
+      "availability": "FA",
+      "status": null,
+      "opponent": "at POR",
+      "weeklyProjection": 7.7,
+      "seasonProjection": 121.8,
+      "seasonAverage": 7.4,
+      "percentStarted": 11,
+      "rosteredPct": 21,
+      "rosterChangePct": 0.9
+    },
+    {
+      "playerId": "demo-free-wr-04",
+      "name": "Taylor Rill",
+      "nflTeam": "BLU",
+      "position": "WR",
+      "availability": "FA",
+      "status": "Q",
+      "opponent": "vs SIL",
+      "weeklyProjection": 8.9,
+      "seasonProjection": 143.3,
+      "seasonAverage": 8.3,
+      "percentStarted": 3,
+      "rosteredPct": 19,
+      "rosterChangePct": 0.4
+    },
+    {
+      "playerId": "demo-free-rb-04",
+      "name": "Morgan Fern",
+      "nflTeam": "HBR",
+      "position": "RB",
+      "availability": "WA",
+      "status": null,
+      "opponent": "vs GLD",
+      "weeklyProjection": 8.4,
+      "seasonProjection": 138.6,
+      "seasonAverage": 8,
+      "percentStarted": 4,
+      "rosteredPct": 25,
+      "rosterChangePct": 7.4
+    }
+  ]
+}

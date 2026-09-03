@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111f">
+    <meta name="description" content="Private, explainable waiver claim planning and in-season fantasy football analysis.">
+    <title>Waiver Lab · 2026 Fantasy Season Companion</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to waiver workspace</a>
+    <header class="app-header">
+      <a class="brand" href="#waivers" aria-label="Waiver Lab home">
+        <span class="brand-mark" aria-hidden="true">W</span>
+        <span>
+          <span class="brand-kicker">2026 season companion</span>
+          <strong>Waiver Lab</strong>
+        </span>
+      </a>
+      <div class="header-status">
+        <span id="data-mode-badge" class="status-badge status-badge--demo">Demo data</span>
+        <span class="privacy-badge"><span aria-hidden="true">●</span> memory only</span>
+      </div>
+    </header>
+
+    <nav class="primary-nav" aria-label="Season tools">
+      <button class="nav-item is-active" type="button" data-view="waivers" aria-current="page">Waivers</button>
+      <button class="nav-item" type="button" data-view="health">Team health</button>
+      <button class="nav-item" type="button" data-view="league">League map</button>
+      <button class="nav-item" type="button" data-view="trades">Trades</button>
+      <button class="nav-item" type="button" data-view="data">Data &amp; privacy</button>
+    </nav>
+
+    <main id="workspace">
+      <section class="view is-active" data-view-panel="waivers" aria-labelledby="waiver-title">
+        <div class="command-bar">
+          <div class="command-copy">
+            <p class="eyebrow">Decision board</p>
+            <h1 id="waiver-title">Build this week’s claim order</h1>
+            <p>Rank the move, not just the player. Every result includes the add, drop cost, confidence, and what could change it.</p>
+          </div>
+          <div class="command-actions">
+            <label class="button button--primary" for="snapshot-input">Import league snapshot</label>
+            <input id="snapshot-input" class="visually-hidden" type="file" accept="application/json,.json">
+            <button id="use-demo-button" class="button button--quiet" type="button">Use demo</button>
+          </div>
+        </div>
+
+        <div id="gate-banner" class="gate-banner" role="status">
+          <span class="gate-icon" aria-hidden="true">!</span>
+          <div>
+            <strong id="gate-title">Fictional demo is loaded</strong>
+            <p id="gate-copy">Import a fresh private snapshot for advice about your league.</p>
+          </div>
+          <button class="text-button" type="button" data-go-view="data">Refresh routine</button>
+        </div>
+
+        <section class="metric-grid" aria-label="Waiver summary">
+          <article class="metric-card metric-card--accent">
+            <span>Top move</span>
+            <strong id="metric-top-move">Calculating…</strong>
+            <small id="metric-top-detail">Comparing candidates with your lowest-cost drop.</small>
+          </article>
+          <article class="metric-card">
+            <span>Waiver priority</span>
+            <strong id="metric-priority">—</strong>
+            <small id="metric-waiver-rule">Waiting for league settings.</small>
+          </article>
+          <article class="metric-card">
+            <span>Capture age</span>
+            <strong id="metric-freshness">—</strong>
+            <small id="metric-coverage">Waiting for a validated snapshot.</small>
+          </article>
+          <article class="metric-card">
+            <span>Claim plan</span>
+            <strong id="metric-plan-count">0 moves</strong>
+            <small>Shared drops become ordered fallback ladders.</small>
+          </article>
+        </section>
+
+        <div class="waiver-layout">
+          <section class="board" aria-labelledby="ranked-title">
+            <header class="board-header">
+              <div>
+                <p class="eyebrow">Add + drop pairs</p>
+                <h2 id="ranked-title">Recommended moves</h2>
+              </div>
+              <button id="weights-toggle" class="button button--quiet button--small" type="button" aria-expanded="false" aria-controls="weights-panel">Tune model</button>
+            </header>
+
+            <div id="weights-panel" class="weights-panel" hidden>
+              <div class="weights-heading">
+                <div>
+                  <strong>Visible model weights</strong>
+                  <p>Weights rebalance automatically. Projection and roster fit stay dominant.</p>
+                </div>
+                <button id="reset-weights" class="text-button" type="button">Reset</button>
+              </div>
+              <div id="weight-controls" class="weight-controls"></div>
+            </div>
+
+            <div class="filter-bar">
+              <label class="search-field">
+                <span class="visually-hidden">Search available players</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+                <input id="player-search" type="search" placeholder="Search available players" autocomplete="off">
+              </label>
+              <div id="position-filters" class="chip-row" aria-label="Position filter">
+                <button class="chip is-active" type="button" data-position="ALL" aria-pressed="true">All</button>
+                <button class="chip" type="button" data-position="RB" aria-pressed="false">RB</button>
+                <button class="chip" type="button" data-position="WR" aria-pressed="false">WR</button>
+                <button class="chip" type="button" data-position="TE" aria-pressed="false">TE</button>
+                <button class="chip" type="button" data-position="QB" aria-pressed="false">QB</button>
+                <button class="chip" type="button" data-position="D/ST" aria-pressed="false">D/ST</button>
+                <button class="chip" type="button" data-position="K" aria-pressed="false">K</button>
+              </div>
+              <label class="sort-field">Sort
+                <select id="recommendation-sort">
+                  <option value="net">Best move</option>
+                  <option value="candidate">Player value</option>
+                  <option value="weekly">Next week</option>
+                  <option value="market">Market rise</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="table-header" aria-hidden="true">
+              <span>Rank</span><span>Add</span><span>Move score</span><span>Drop</span><span>Verdict</span><span></span>
+            </div>
+            <div id="waiver-list" class="waiver-list" aria-live="polite"></div>
+            <div id="waiver-empty" class="empty-state" hidden>
+              <strong>No moves match these filters.</strong>
+              <p>Clear the search or choose another position.</p>
+            </div>
+            <footer class="board-footer">
+              <span id="result-count">0 candidates</span>
+              <span>Scores compare each add with a specific drop.</span>
+            </footer>
+          </section>
+
+          <aside class="claim-panel" aria-labelledby="claim-plan-title">
+            <header>
+              <div>
+                <p class="eyebrow">Review queue</p>
+                <h2 id="claim-plan-title">Claim plan</h2>
+              </div>
+              <button id="clear-plan" class="text-button" type="button">Clear</button>
+            </header>
+            <p class="panel-note">This is a local checklist only. Nothing is sent to ESPN.</p>
+            <div id="claim-groups" class="claim-groups"></div>
+            <div id="claim-empty" class="empty-claim">
+              <span aria-hidden="true">＋</span>
+              <strong>Stage your first move</strong>
+              <p>Add recommendations here, then order alternatives that use the same drop.</p>
+            </div>
+            <button id="export-plan" class="button button--secondary button--full" type="button" disabled>Export review plan</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="health" aria-labelledby="health-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow">Roster pressure</p><h1 id="health-title">Team health</h1></div>
+          <p>Availability labels are observations, not medical advice. Confirm news before lineups lock.</p>
+        </div>
+        <div id="health-summary" class="insight-grid"></div>
+        <section class="panel"><header class="panel-header"><div><p class="eyebrow">Current roster</p><h2>Depth and status</h2></div></header><div id="roster-table" class="roster-table"></div></section>
+      </section>
+
+      <section class="view" data-view-panel="league" aria-labelledby="league-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow">Every roster</p><h1 id="league-title">League map</h1></div>
+          <p>Find positional concentration, thin benches, and likely competition for the same waiver targets.</p>
+        </div>
+        <div id="league-grid" class="league-grid"></div>
+      </section>
+
+      <section class="view" data-view-panel="trades" aria-labelledby="trades-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow">Mutual fit</p><h1 id="trades-title">Trade finder</h1></div>
+          <p>Start with complementary roster shapes. Player value and availability still need a fresh review.</p>
+        </div>
+        <div id="trade-list" class="trade-list"></div>
+      </section>
+
+      <section class="view" data-view-panel="data" aria-labelledby="data-title" hidden>
+        <div class="section-heading">
+          <div><p class="eyebrow">Private by design</p><h1 id="data-title">Data &amp; privacy</h1></div>
+          <p>The public app shell contains no league data. Your imported snapshot stays in this tab’s memory.</p>
+        </div>
+        <div class="data-grid">
+          <section class="panel data-card">
+            <p class="eyebrow">Current snapshot</p>
+            <h2 id="data-snapshot-title">Fictional demo</h2>
+            <dl id="snapshot-facts" class="facts"></dl>
+            <div class="button-row">
+              <label class="button button--primary" for="snapshot-input-secondary">Replace snapshot</label>
+              <input id="snapshot-input-secondary" class="visually-hidden" type="file" accept="application/json,.json">
+              <button id="export-snapshot" class="button button--secondary" type="button">Export local copy</button>
+              <button id="delete-data" class="button button--danger" type="button">Forget private data</button>
+            </div>
+          </section>
+          <section class="panel data-card">
+            <p class="eyebrow">Refresh routine</p>
+            <h2>Bring ESPN into the app safely</h2>
+            <ol class="routine-list">
+              <li><span>1</span><div><strong>Open your signed-in league</strong><p>Keep the roster, player pool, league settings, and waiver order available in Chrome.</p></div></li>
+              <li><span>2</span><div><strong>Ask Codex to refresh the snapshot</strong><p>Codex reads the visible league pages, validates a local schema-v1 file, and never saves credentials.</p></div></li>
+              <li><span>3</span><div><strong>Import the fresh file here</strong><p>Review the capture summary before replacing this tab’s current state.</p></div></li>
+              <li><span>4</span><div><strong>Recheck before processing</strong><p>Advice older than six hours is gated. Verify player availability and every drop in ESPN.</p></div></li>
+            </ol>
+          </section>
+          <section class="panel data-card data-card--wide">
+            <p class="eyebrow">Privacy boundary</p>
+            <h2>What leaves this browser?</h2>
+            <div class="privacy-grid">
+              <div><span class="privacy-answer privacy-answer--no">Nothing private</span><p>No analytics, APIs, account backend, cloud database, telemetry, or automated transactions.</p></div>
+              <div><span class="privacy-answer">Public assets only</span><p>The service worker caches only the fixed app shell. It never sees imported files or recommendations.</p></div>
+              <div><span class="privacy-answer">You stay in control</span><p>Exports are local downloads. Final claims, drops, trades, and messages require your review in ESPN.</p></div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="import-dialog" class="modal">
+      <form method="dialog">
+        <button class="modal-close" value="cancel" aria-label="Close import review">×</button>
+        <p class="eyebrow">Validated locally</p>
+        <h2>Review this snapshot</h2>
+        <p id="import-summary" class="modal-copy"></p>
+        <div id="import-warnings" class="warning-list"></div>
+        <div class="modal-actions">
+          <button class="button button--quiet" value="cancel">Cancel</button>
+          <button id="confirm-import" class="button button--primary" value="default">Use this snapshot</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="delete-dialog" class="modal">
+      <form method="dialog">
+        <p class="eyebrow">Clear this tab</p>
+        <h2>Forget the imported league data?</h2>
+        <p class="modal-copy">This removes the private snapshot and claim plan from memory and restores the fictional demo. Keep an export first if you need one.</p>
+        <div class="modal-actions">
+          <button class="button button--quiet" value="cancel">Keep data</button>
+          <button id="confirm-delete" class="button button--danger" value="default">Forget it</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <div id="status-message" class="visually-hidden" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

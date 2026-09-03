@@ -23,13 +23,18 @@
   - private league/team identifiers, manager identities, team names, rosters,
     standings, matchups, transactions, messages, or trade discussions;
   - browser exports or screenshots containing private league information.
-- Imported league snapshots stay on the user's device in browser storage.
+- Imported league snapshots stay in memory in the current browser tab on the
+  deployed GitHub Pages site. Do not use origin-wide localStorage, sessionStorage,
+  IndexedDB, or Cache Storage for private league data because sibling Pages
+  projects share the same github.io origin.
   Never transmit them to analytics, hosted databases, APIs, telemetry, error
   reporting, service-worker caches, CI logs, or third parties.
 - Treat authenticated browser access as temporary observation, not permission
   to persist or publish what is visible.
 - Use fictional or irreversibly anonymized fixtures in source and tests.
 - Provide clear local export, replacement, and permanent-delete controls.
+- A localhost-only development mode may add persistence later, but it must be
+  separately threat-modeled and may not silently change the deployed policy.
 
 ## Repository and Deployment
 
@@ -53,13 +58,16 @@
 
 - Use stable platform/player/team identifiers as keys; names are display data.
 - Define and version the private snapshot schema. Validate every import before
-  replacing local state and preserve the last valid snapshot on failure.
+  replacing in-memory state and preserve the last valid snapshot on failure.
 - Reject malformed, unsupported, unexpectedly large, or internally
   inconsistent imports. Recover gracefully from bad browser storage.
 - Keep a deterministic local audit trail for snapshots, recommendations, and
   user actions without storing authentication material.
 - Display platform, season, scoring settings, capture time, freshness, and
   missing-data warnings prominently.
+- Advice older than six hours is historical only. Disable claim-ready controls
+  until the roster, available pool, waiver order, and league settings are
+  refreshed.
 - League settings remain editable. Never bake one team count, scoring format,
   roster shape, waiver system, or playoff format into recommendation logic.
 

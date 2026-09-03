@@ -20,7 +20,8 @@ transaction authority to the app.
 2. Review capture time, league settings, validation results, and missing data.
 3. Open Team Health for strengths, risks, and monitoring priorities.
 4. Compare a waiver, lineup, or trade scenario with the baseline roster.
-5. Save the reasoning locally and review a proposed action.
+5. Stage the reasoning in the current tab and optionally export a local review
+   plan.
 6. If desired, open the fantasy platform and personally confirm the final step.
 
 ## Recommendation Contract
@@ -38,7 +39,8 @@ visible, and the user can inspect both sides of a trade or add/drop pair.
 
 ## Initial Modules
 
-- **Snapshot:** validation, local persistence, history, export, and deletion.
+- **Snapshot:** validation, memory-only session state, local export, replacement,
+  and deletion.
 - **Team Health:** depth, concentration, handcuffs, bye weeks, injury/status,
   replacement levels, and roster construction.
 - **Waivers:** candidate pool, add/drop pairs, priority/FAAB context, and watch
